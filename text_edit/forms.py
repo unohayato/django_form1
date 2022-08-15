@@ -3,9 +3,9 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 class TextForm(forms.Form):
-  text = forms.CharField()
-  search = forms.CharField()
-  replace = forms.CharField()
+  text = forms.CharField(label='', widget=forms.Textarea)
+  search = forms.CharField(label='検索')
+  replace = forms.CharField(label='置換')
   
   def clean(self):
     data = super().clean()

@@ -9,7 +9,12 @@
 
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% for field in form %}
+  <p>
+    <label>{{ field.label }}</label>
+    {{ field }}
+  </p>
+  {% endfor %}
   <input type="submit" value="変換">
 </form>
   <div>
