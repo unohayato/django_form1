@@ -4,7 +4,7 @@ from django.views.generic.edit import FormView
 from . import forms
 
 class Index(FormView):
-  form_class = forms.TextForm
+  form_class = forms.PostForm
   template_name = 'text_edit/index.html'
 
   def form_valid(self, form):
