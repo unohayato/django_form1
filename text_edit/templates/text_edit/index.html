@@ -1,11 +1,19 @@
 {% extends 'text_edit/base.html' %}
 
 {% block main %}
+{% for error in form.non_field_errors %}
+  <div>
+    {{ error }}
+  </div>
+{% endfor %}
 
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <input type="submit" value="変換">
 </form>
-
+  <div>
+    <h2>変換後</h2>
+    <p>{{ new_text }}</p>
+  </div>
 {% endblock main %}
